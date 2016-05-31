@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E0C3D7A1CFC82A00030475F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C3D791CFC82A00030475F /* main.m */; };
+		5E0C3D811CFC83020030475F /* libmodbus.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0C3D801CFC83020030475F /* libmodbus.5.dylib */; };
+		5E0C3D851CFCAC800030475F /* ModbusHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C3D841CFCAC800030475F /* ModbusHandler.m */; };
+		5E0C3D891CFCB1250030475F /* ModbusErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C3D881CFCB1250030475F /* ModbusErrors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,11 @@
 /* Begin PBXFileReference section */
 		5E0C3D761CFC82A00030475F /* ModbusTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ModbusTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0C3D791CFC82A00030475F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5E0C3D801CFC83020030475F /* libmodbus.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmodbus.5.dylib; path = ../../../../../usr/local/Cellar/libmodbus/3.1.1/lib/libmodbus.5.dylib; sourceTree = "<group>"; };
+		5E0C3D841CFCAC800030475F /* ModbusHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModbusHandler.m; sourceTree = "<group>"; };
+		5E0C3D861CFCAC900030475F /* ModbusHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModbusHandler.h; sourceTree = "<group>"; };
+		5E0C3D871CFCB1170030475F /* ModbusErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModbusErrors.h; sourceTree = "<group>"; };
+		5E0C3D881CFCB1250030475F /* ModbusErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModbusErrors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E0C3D811CFC83020030475F /* libmodbus.5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +50,7 @@
 		5E0C3D6D1CFC82A00030475F = {
 			isa = PBXGroup;
 			children = (
+				5E0C3D801CFC83020030475F /* libmodbus.5.dylib */,
 				5E0C3D781CFC82A00030475F /* ModbusTest */,
 				5E0C3D771CFC82A00030475F /* Products */,
 			);
@@ -58,6 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				5E0C3D791CFC82A00030475F /* main.m */,
+				5E0C3D841CFCAC800030475F /* ModbusHandler.m */,
+				5E0C3D861CFCAC900030475F /* ModbusHandler.h */,
+				5E0C3D871CFCB1170030475F /* ModbusErrors.h */,
+				5E0C3D881CFCB1250030475F /* ModbusErrors.m */,
 			);
 			path = ModbusTest;
 			sourceTree = "<group>";
@@ -118,6 +132,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E0C3D891CFCB1250030475F /* ModbusErrors.m in Sources */,
+				5E0C3D851CFCAC800030475F /* ModbusHandler.m in Sources */,
 				5E0C3D7A1CFC82A00030475F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +225,11 @@
 		5E0C3D7E1CFC82A00030475F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libmodbus/3.1.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +237,11 @@
 		5E0C3D7F1CFC82A00030475F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libmodbus/3.1.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
